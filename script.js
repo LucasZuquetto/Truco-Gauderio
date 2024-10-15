@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Jogar a carta do jogador
+    // Jogar a carta do jogado
     playerCardSlot.textContent = card.textContent;
     playerCardSlot.style.backgroundImage = `url(${playerCards.filter((cardPlayer) => cardPlayer.code == card.textContent)[0].image})`;
     playerCardSlot.classList.remove('placeholder');
