@@ -183,9 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // computerCardSlot.style.borderColor = '#286609'; // Manter fundo cinza médio
       // playerCardSlot.style.borderColor = 'rgb(223, 121, 104)'; // Manter fundo cinza médio
       computerSetScore += 1;
-      if (computerSetScore == 1) {
-        computerPlaysCard(currentRound + 1)
-      }
+      // if (computerSetScore == 1) {
+      //   computerPlaysCard(currentRound + 1)
+      // }
     }
 
     // Avançar para a próxima rodada
