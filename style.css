@@ -1,0 +1,243 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    /* Preto profundo para o fundo */
+    color: #e0e0e0;
+    /* Cinza claro para o texto */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #1f1f1f;
+    /* Cinza muito escuro */
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    border-bottom: 2px solid #333;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #ffcc00;
+    /* Amarelo dourado */
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.score {
+    font-size: 1.2rem;
+}
+
+.score span:first-child {
+    font-weight: bold;
+    color: #ff5722;
+    /* Laranja avermelhado */
+}
+
+/* Área do Jogo */
+.game-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Mão do Computador */
+.computer-hand {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-size: cover;
+}
+
+.card.back {
+    width: 70px;
+    height: 105px;
+    background-color: #424242;
+    /* Cinza médio para as cartas viradas */
+    border: 2px solid #ff5722;
+    /* Borda laranja avermelhada */
+    border-radius: 8px;
+    /* background-image: url('images/card-back.png'); */
+    background-size: cover;
+    cursor: default;
+}
+
+/* Mesa de Jogo */
+.game-table {
+    width: 100%;
+    max-width: 800px;
+    /* Aumentado para acomodar 3 rodadas */
+    background-color: #2e7d32;
+    /* Verde escuro */
+    border: 2px solid #ff5722;
+    /* Borda laranja avermelhada */
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.played-round {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.played-round .card {
+    width: 80px;
+    height: 120px;
+    background-color: rgba(255, 87, 34, 0.2);
+    /* Laranja transparente */
+    border: 2px dashed #ff5722;
+    /* Borda laranja avermelhada */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #ffcc00;
+    /* Amarelo dourado */
+}
+
+.computer-card {
+    /* Estilos específicos para as cartas do computador na mesa */
+    background-color: #424242;
+    /* Cinza médio */
+    border: 2px solid #ff5722;
+    /* background-image: url('images/card-back.png'); */
+    background-size: cover;
+    cursor: default;
+}
+
+.player-card {
+    /* Estilos específicos para as cartas do jogador na mesa */
+    background-color: #424242;
+    /* Cinza médio */
+    border: 2px solid #ff5722;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Mão do Jogador */
+.player-hand {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.player-hand .card {
+    width: 70px;
+    height: 105px;
+    background-color: #424242;
+    /* Cinza médio para as cartas do jogador */
+    color: #ffcc00;
+    /* Amarelo dourado */
+    border: 2px solid #ff5722;
+    /* Borda laranja avermelhada */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.player-hand .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.7);
+    /* Sombra laranja avermelhada */
+}
+
+#new-game {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #ffcc00;
+    /* Amarelo dourado */
+    color: #1f1f1f;
+    /* Texto escuro */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#new-game:hover {
+    background-color: #ff9800;
+    /* Laranja vibrante ao passar o mouse */
+    color: #fff;
+}
+
+.fixed-buttons {
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    /* Espaçamento entre os botões */
+}
+
+/* Estilo dos botões */
+.btn {
+    background-color: #333;
+    /* Cor escura para o botão */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover nos botões */
+.btn:hover {
+    background-color: #555;
+    /* Cor mais clara ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .scoreboard {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .computer-hand,
+    .player-hand {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .game-table {
+        max-width: 90%;
+    }
+
+    .player-hand .card,
+    .computer-hand .card.back {
+        width: 60px;
+        height: 90px;
+
+    }
+}

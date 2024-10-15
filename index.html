@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truco Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Truco Online</h1>
+        <div class="scoreboard">
+            <div class="score">
+                <span>Jogador:</span> <span id="player-score">0</span>
+            </div>
+            <div class="score">
+                <span>Computador:</span> <span id="computer-score">0</span>
+            </div>
+            <button id="new-game">Novo Jogo</button>
+        </div>
+    </header>
+
+    <div class="game-container">
+        <div class="computer-hand">
+            <!-- Cartas do Computador (viradas para baixo) -->
+            <div class="card back"></div>
+            <div class="card back"></div>
+            <div class="card back"></div>
+        </div>
+
+        <div class="game-table">
+            <!-- Mesa de Jogo com 3 Rodadas -->
+            <div class="played-round" id="round-1">
+                <div class="card computer-card placeholder">Computador</div>
+                <span class="computer-status"></span>
+                <span>Rodada 1</span>
+                <span class="player-status"></span>
+                <div class="card player-card placeholder">Jogador</div>
+            </div>
+            <div class="played-round" id="round-2">
+                <div class="card computer-card placeholder">Computador</div>
+                <span class="computer-status"></span>
+                <span>Rodada 2</span>
+                <span class="player-status"></span>
+                <div class="card player-card placeholder">Jogador</div>
+            </div>
+            <div class="played-round" id="round-3">
+                <div class="card computer-card placeholder">Computador</div>
+                <span class="computer-status"></span>
+                <span>Rodada 3</span>
+                <span class="player-status"></span>
+                <div class="card player-card placeholder">Jogador</div>
+            </div>
+        </div>
+
+        <div class="player-hand">
+            <!-- Cartas do Jogador -->
+            <div class="card">1</div>
+            <div class="card">2</div>
+            <div class="card">3</div>
+
+        </div>
+        <div class="fixed-buttons">
+            <button id="truco" class="btn">Truco</button>
+            <button id="envido" class="btn">Envido</button>
+        </div>
+
+    </div>
+    <!-- Link para o script JavaScript (opcional) -->
+    <script src="script.js"></script>
+</body>
+
+</html>
